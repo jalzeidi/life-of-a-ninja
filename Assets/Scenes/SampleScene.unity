@@ -1043,17 +1043,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 863730054, guid: 94bd6753b158b6645ac2179cd3d392a6, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8712617024704288192, guid: 94bd6753b158b6645ac2179cd3d392a6, type: 3}
       propertyPath: m_Name
       value: Ninja
-      objectReference: {fileID: 0}
-    - target: {fileID: 8712617024704288193, guid: 94bd6753b158b6645ac2179cd3d392a6, type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8712617024704288204, guid: 94bd6753b158b6645ac2179cd3d392a6, type: 3}
-      propertyPath: m_LinearDrag
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8712617024704288206, guid: 94bd6753b158b6645ac2179cd3d392a6, type: 3}
       propertyPath: m_RootOrder

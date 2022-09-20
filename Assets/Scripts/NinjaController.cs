@@ -11,6 +11,7 @@ public class NinjaController : MonoBehaviour
     float horizontal;
     Vector2 lookDirection;
     Animator animator;
+    AudioSource swing;
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +19,7 @@ public class NinjaController : MonoBehaviour
         rigidbody2d = GetComponent<Rigidbody2D>();
         lookDirection = new Vector2(1, 0);
         animator = GetComponent<Animator>();
+        swing = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -52,6 +54,7 @@ public class NinjaController : MonoBehaviour
     void Attack()
     {
         animator.SetTrigger("Attack");
+        swing.Play();
         Vector2 hitBoxOffset = new Vector2(0.8f * lookDirection.x, 0.3f);
         GameObject hitBox = Instantiate(hitBoxPrefab, rigidbody2d.position + hitBoxOffset, Quaternion.identity);
         Destroy(hitBox, 0.5f);
