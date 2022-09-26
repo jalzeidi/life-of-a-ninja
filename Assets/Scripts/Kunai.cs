@@ -5,6 +5,7 @@ using UnityEngine;
 public class Kunai : MonoBehaviour
 {
     public AudioClip slice;
+    public AudioClip throwKunai;
 
     Rigidbody2D rigidbody2d;
     AudioSource source;
@@ -29,6 +30,7 @@ public class Kunai : MonoBehaviour
 
     public void Throw(Vector2 direction, float force) 
     {
+        source.PlayOneShot(throwKunai);
         rigidbody2d.AddForce(direction * force);
     }
 

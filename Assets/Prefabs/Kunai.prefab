@@ -100,6 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slice: {fileID: 8300000, guid: 357e14b1b49d1c9409755e70a0f72a7f, type: 3}
+  throwKunai: {fileID: 8300000, guid: c6b7ee36279bc11449ede865f556d13f, type: 3}
 --- !u!50 &55125877840044652
 Rigidbody2D:
   serializedVersion: 4
