@@ -5,13 +5,16 @@ using UnityEngine;
 public class NinjaController : MonoBehaviour
 {
     public GameObject hitBoxPrefab;
+    public GameObject kunaiPrefab;
     public float speed;
+    public float throwForce;
+    public AudioClip swing;
 
     Rigidbody2D rigidbody2d;
     float horizontal;
     Vector2 lookDirection;
     Animator animator;
-    AudioSource swing;
+    AudioSource source;
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +22,7 @@ public class NinjaController : MonoBehaviour
         rigidbody2d = GetComponent<Rigidbody2D>();
         lookDirection = new Vector2(1, 0);
         animator = GetComponent<Animator>();
-        swing = GetComponent<AudioSource>();
+        source = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -42,6 +45,10 @@ public class NinjaController : MonoBehaviour
         {
             Attack();
         }
+        if(Input.GetKeyUp(KeyCode.J))
+        {
+            Throw();
+        }
     }
 
     void FixedUpdate() 
@@ -54,9 +61,18 @@ public class NinjaController : MonoBehaviour
     void Attack()
     {
         animator.SetTrigger("Attack");
-        swing.Play();
+        source.PlayOneShot(swing);
         Vector2 hitBoxOffset = new Vector2(0.8f * lookDirection.x, 0.3f);
         GameObject hitBox = Instantiate(hitBoxPrefab, rigidbody2d.position + hitBoxOffset, Quaternion.identity);
         Destroy(hitBox, 0.5f);
+    }
+
+    void Throw()
+    {
+        GameObject kunaiObject = Instantiate(kunaiPrefab, rigidbody2d.position + new Vector2(1.2f, -0.25f), Quaternion.identity);
+        Kunai kunai = kunaiObject.GetComponent<Kunai>();
+        kunai.SetAudioSource(source);
+        kunai.Throw(lookDirection, throwForce);
+        animator.SetTrigger("Throw");
     }
 }

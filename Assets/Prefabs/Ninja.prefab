@@ -149,7 +149,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitBoxPrefab: {fileID: 5903065702475763295, guid: e48b8eda0b55c3846bc087daa35ee00d, type: 3}
+  kunaiPrefab: {fileID: 5286782347488035939, guid: b4b90ef3da44485439826d8386fb2c19, type: 3}
   speed: 3
+  throwForce: 450
+  swing: {fileID: 8300000, guid: 34242c1ce0a462746a439528bac03665, type: 3}
 --- !u!95 &5943419053283934298
 Animator:
   serializedVersion: 4
@@ -180,8 +183,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 34242c1ce0a462746a439528bac03665, type: 3}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
