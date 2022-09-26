@@ -69,7 +69,8 @@ public class NinjaController : MonoBehaviour
 
     void Throw()
     {
-        GameObject kunaiObject = Instantiate(kunaiPrefab, rigidbody2d.position + new Vector2(1.2f, -0.25f), Quaternion.identity);
+        Quaternion kunaiOrientation = lookDirection.x > 0 ? Quaternion.identity: Quaternion.Euler(0, 0, 180);
+        GameObject kunaiObject = Instantiate(kunaiPrefab, rigidbody2d.position + new Vector2(1.2f * lookDirection.x, -0.25f), kunaiOrientation);
         Kunai kunai = kunaiObject.GetComponent<Kunai>();
         kunai.SetAudioSource(source);
         kunai.Throw(lookDirection, throwForce);
