@@ -13,6 +13,4 @@ Proof of concept for 'Life of a Ninja.' Playable character able to walk left/rig
 
 ### Note
 * Character doesn't respawn if she falls off the platform, rerun the game to start over.
-* Animation transitions have some bugs.
-* Throwing the kunai while facing left has no animation, and the kunai doesn't face the correct direction.
-* Throwing the kunai while facing right works as expected.
+* Animation transitions may have some subtle bugs.
